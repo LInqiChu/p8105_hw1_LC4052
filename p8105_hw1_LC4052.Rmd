@@ -7,17 +7,43 @@ date: "2025-09-16"
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+library(moderndive)
+library(tidyverse)
+
 ```
 
 ## Problem 1
 
-1. Load the library and dataset.
+1. Load the dataset.
 
 ```{r}
-library(moderndive)
 data("early_january_weather")
 
 ```
+
+2. Describe the data.
+
+```{r}
+# Names and values of important variables
+str(early_january_weather)
+names(early_january_weather)
+
+# Size
+nrow(early_january_weather)
+ncol(early_january_weather)
+
+# Mean temperature
+mean(early_january_weather$temp)
+
+
+```
+
+The variables in this dataset includes 
+
+
+
+
+
 
 
 
@@ -28,10 +54,13 @@ data("early_january_weather")
 
 ## Problem 2
 
-You can also embed plots, for example:
+```{r}
 
-```{r pressure, echo=FALSE}
-plot(pressure)
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+```{r}
+
+```
+
+
