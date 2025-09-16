@@ -1,0 +1,37 @@
+---
+title: "p8105_hw1_LC4052"
+author: "Linqi Chu"
+output: html_document
+date: "2025-09-16"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Problem 1
+
+1. Load the library and dataset.
+
+```{r}
+library(moderndive)
+data("early_january_weather")
+
+```
+
+
+
+
+
+
+
+
+## Problem 2
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
