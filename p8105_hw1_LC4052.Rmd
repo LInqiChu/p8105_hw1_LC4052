@@ -26,40 +26,57 @@ data("early_january_weather")
 ```{r}
 # Names and values of important variables
 str(early_january_weather)
+early_january_weather = janitor::clean_names(early_january_weather)
 names(early_january_weather)
 
-# Size
+```
+```{r}
+# size of the dataset
 nrow(early_january_weather)
 ncol(early_january_weather)
 
-# Mean temperature
-mean(early_january_weather$temp)
+```
+
+```{r}
+mean_tmp = mean(early_january_weather$temp)
+mean_tmp
+
+```
+The variables in this dataset include "origin", "year", "month", "day", "hour", "temp", "dewp", "humid", "wind_dir" ,"wind_speed", "wind_gust", "precip", "pressure"   "visib",and "time_hour".
+
+The dataset has 358 rows and 15 columns. The mean temperature is 39.58212.
+
+
+```{r}
 
 
 ```
 
-The variables in this dataset includes 
 
+```{r}
 
-
-
-
-
-
-
-
-
-
+```
 
 
 ## Problem 2
 
 ```{r}
 
+
+
+
 ```
 
 
 ```{r}
+mean
+
+as.numeric
+
+
+# please show this chunk but not the output
+
+
 
 ```
 
