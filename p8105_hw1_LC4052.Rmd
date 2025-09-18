@@ -38,24 +38,57 @@ ncol(early_january_weather)
 ```
 
 ```{r}
+# The mean temperature
 mean_tmp = mean(early_january_weather$temp)
 mean_tmp
 
 ```
-The variables in this dataset include "origin", "year", "month", "day", "hour", "temp", "dewp", "humid", "wind_dir" ,"wind_speed", "wind_gust", "precip", "pressure"   "visib",and "time_hour".
+The variables in this dataset include "origin", "year", "month", "day", "hour", "temp", "dewp", "humid", "wind_dir" ,"wind_speed", "wind_gust", "precip", "pressure", "visib", and "time_hour".
 
 The dataset has 358 rows and 15 columns. The mean temperature is 39.58212.
 
 
 ```{r}
-
+# Make a scatterplot of temp (y) vs time_hour (x)
+weather_scatterplot = ggplot(data = early_january_weather, 
+  mapping = aes(x = time_hour, y = temp, color = humid))+ 
+  geom_point(alpha = 0.7) + 
+  labs(
+    title = "Temperature vs. Time_hour",
+    x = "Time Hour",
+    y = "Temperature (°F)",
+    color = "Humidity (%)") +
+  scale_x_datetime(
+    date_breaks = "2 days",
+    date_labels = "%b %d"
+  )
+  
+weather_scatterplot
 
 ```
+
+There is a general upward trend in temperature as time progresses from Jan 02 towards Jan 14. 
+
+Within each day, temperature shows a cyclical pattern. It tends to be low during the early hours, becomes higher later and turns lower at the end of the day.
+
+There is a correlation between temperature and humidity. Points with higher humidity are mostly concentrated in areas with lower temperatures, while points with lower humidity are more likely to be found in regions with higher temperatures.
+
+There is some variability in the data. For example, from Jan 12 to Jan 14, there are points with relatively high temperatures, and the humidity values are also high.
 
 
 ```{r}
+# Export the scatterplot
+ggsave(
+  "weather_temp_time_scatterplot.png",
+  plot = weather_scatterplot,
+  width = 10, 
+  height = 6, 
+  dpi = 300
+)
 
 ```
+
+
 
 
 ## Problem 2
