@@ -94,8 +94,20 @@ ggsave(
 ## Problem 2
 
 ```{r}
+# Create a dataframe
 
+df1 = tibble(
+  # a random sample of size 10 from a standard Normal distribution
+  norm_sample = rnorm(n = 10, mean = 0, sd = 1),  
+  # a logical vector indicating whether elements of the sample are greater than 0
+  is_positive = norm_sample > 0,  
+  # a character vector of length 10
+  char_vec = c("1", "2", "3", "4", "5", "6", "7", "8", "9", "10"),
+  # a factor vector of length 10, with 3 different factor “levels”
+  factor_vec = factor(c("low", "low", "mid", "mid", "mid", "high", "high", "high", "low", "mid"), levels = c("low", "mid", "high"))  
+)
 
+df1
 
 
 ```
