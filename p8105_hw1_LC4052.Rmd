@@ -18,7 +18,6 @@ library(tidyverse)
 
 ```{r}
 data("early_january_weather")
-
 ```
 
 2. Describe the data.
@@ -97,7 +96,6 @@ ggsave(
 
 ```{r}
 # Create a dataframe
-
 df = tibble(
   # a random sample of size 10 from a standard Normal distribution
   norm_sample = rnorm(n = 10, mean = 0, sd = 1),  
@@ -117,6 +115,7 @@ df
 ### Calculate mean
 
 ```{r}
+# pull the variable out of dataframe
 nd = pull(df, norm_sample)
 log_vec = pull(df, log_vec)
 char_vec = pull(df, char_vec)
@@ -158,11 +157,15 @@ as.numeric(df$factor_vec)
 
 ```
 
+For logical vector, as.numeric() converts TRUE to 1 and FALSE to 0.
 
+For character vector, as.numeric() converts all elements to NA because character strings cannot be directly converted to meaningful numbers.
 
+For factor vector, as.numeric() returns the integer codes of the factor levels.
 
+Only numeric variables allow direct calculation of a mean. The mean of a logical variable represents the proportion of TRUE values. Character and factor variables, by default, do not support mean calculation.
 
-
+If a variable can be converted to a numeric type (such as logical variables and ordered factors), it can have its mean calculated. The effect of conversion is ineffective for pure text character variables.
 
 
 
