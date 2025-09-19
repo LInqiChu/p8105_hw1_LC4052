@@ -30,6 +30,7 @@ early_january_weather = janitor::clean_names(early_january_weather)
 names(early_january_weather)
 
 ```
+
 ```{r}
 # size of the dataset
 nrow(early_january_weather)
@@ -43,6 +44,7 @@ mean_tmp = mean(early_january_weather$temp)
 mean_tmp
 
 ```
+
 The variables in this dataset include "origin", "year", "month", "day", "hour", "temp", "dewp", "humid", "wind_dir" ,"wind_speed", "wind_gust", "precip", "pressure", "visib", and "time_hour".
 
 The dataset has 358 rows and 15 columns. The mean temperature is 39.58212.
@@ -96,33 +98,71 @@ ggsave(
 ```{r}
 # Create a dataframe
 
-df1 = tibble(
+df = tibble(
   # a random sample of size 10 from a standard Normal distribution
   norm_sample = rnorm(n = 10, mean = 0, sd = 1),  
   # a logical vector indicating whether elements of the sample are greater than 0
-  is_positive = norm_sample > 0,  
+  log_vec = norm_sample > 0,  
   # a character vector of length 10
-  char_vec = c("1", "2", "3", "4", "5", "6", "7", "8", "9", "10"),
+  char_vec = c("a", "b", "c", "d", "e", "f", "g", "h", "i", "j"),
   # a factor vector of length 10, with 3 different factor “levels”
   factor_vec = factor(c("low", "low", "mid", "mid", "mid", "high", "high", "high", "low", "mid"), levels = c("low", "mid", "high"))  
 )
 
-df1
+df
 
 
 ```
 
+### Calculate mean
 
 ```{r}
-mean
-
-as.numeric
-
-
-# please show this chunk but not the output
-
-
+nd = pull(df, norm_sample)
+log_vec = pull(df, log_vec)
+char_vec = pull(df, char_vec)
+factor_vec = pull(df, factor_vec)
 
 ```
+
+```{r}
+mean_nd = mean(nd)
+mean_nd
+
+```
+
+```{r}
+mean_log = mean(log_vec)
+mean_log
+
+```
+
+```{r}
+mean_char = mean(char_vec)
+mean_char
+
+```
+
+```{r}
+mean_factor = mean(factor_vec)
+mean_factor
+
+```
+
+We can take the mean of random sample and logical vector. The character vector and factor vector do not work.
+
+
+```{r eval = FALSE}
+as.numeric(df$log_vec)
+as.numeric(df$char_vec)
+as.numeric(df$factor_vec)
+
+```
+
+
+
+
+
+
+
 
 
