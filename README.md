@@ -1,1 +1,1 @@
-# p8105_hw1_LC4052
+# Homework for p8105 by LC4052
